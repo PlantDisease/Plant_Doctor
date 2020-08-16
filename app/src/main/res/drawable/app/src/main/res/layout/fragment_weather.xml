@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WeatherFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:password="false"
+            android:text="Select State from below list"
+            android:textSize="18dp" />
+
+        <Spinner
+            android:id="@+id/state"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:background="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Select District "
+            android:textSize="18dp" />
+
+        <Spinner
+            android:id="@+id/district"
+            android:layout_width="match_parent"
+            android:layout_height="34dp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Select the crop you want Predict Future growth"
+            android:textSize="18dp" />
+
+        <Spinner
+            android:id="@+id/crop"
+            android:layout_width="match_parent"
+            android:layout_height="34dp" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="70dp"
+            android:paddingTop="20dp"
+            android:text="Per Acre Production will be"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:paddingLeft="70dp"
+            android:paddingTop="20dp"
+            android:text="Wait for the results..."
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:padding="10dp"
+            android:text="How much acre you have ?.." />
+
+        <EditText
+            android:id="@+id/acre"
+            android:layout_width="201dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberSigned|number" />
+
+        <Button
+            android:id="@+id/calculate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calculate" />
+
+        <TextView
+            android:id="@+id/Calculated"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:paddingLeft="70dp"
+            android:paddingTop="20dp"
+            android:text="Calculating..."
+            android:textSize="25dp" />
+
+    </LinearLayout>
+</FrameLayout>

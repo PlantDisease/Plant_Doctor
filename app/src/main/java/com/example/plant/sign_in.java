@@ -101,8 +101,8 @@ public class sign_in extends AppCompatActivity {
         resetpass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), RestorePassword.class);
-                startActivity(intent);
+                Intent inte = new Intent(getApplicationContext(), RestorePassword.class);
+                startActivity(inte);
             }
         });
 

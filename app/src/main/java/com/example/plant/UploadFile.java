@@ -128,7 +128,7 @@ public class UploadFile extends AppCompatActivity {
             filePath = getPath(picUri);
             if (filePath != null) {
                 try {
-                    Log.d("filePath", filePath);
+                    Log.d("filePath", String.valueOf(filePath));
                     bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), picUri);
 
                         Log.d("bitmap", String.valueOf(bitmap));
@@ -153,7 +153,7 @@ public class UploadFile extends AppCompatActivity {
     private void progress_dialog() {
         final Loading loading=new Loading(UploadFile.this);
         loading.startloadingDialog();
-        Loading.dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        loading.dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         Handler handler=new Handler();
         handler.postDelayed(new Runnable() {
             @Override

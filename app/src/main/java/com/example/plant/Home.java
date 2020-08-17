@@ -34,9 +34,8 @@ public class Home extends AppCompatActivity {
 
     CardView mainContainer, Health_check, Crop_cultivation, Profile_, About_;
     ProgressBar loader;
-    String CITY = "udupi,in";
+    String CITY = "Mangalore,in";
     String API = "8118ed6ee68db2debfaaa5a44c832918";
-    String response = HttpRequest.excuteGet("https://api.openweathermap.org/data/2.5/weather?q=" + CITY + "&units=metric&appid=" + API);
     TextView addressTxt, updated_atTxt, tempTxt, errorText;
 
     @Override

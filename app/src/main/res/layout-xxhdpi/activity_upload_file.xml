@@ -6,43 +6,66 @@
     android:layout_height="match_parent"
     tools:context=".UploadFile">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="372dp"
-        android:layout_height="470dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056"
-        app:srcCompat="@drawable/img_prev" />
+        tools:ignore="MissingConstraints">
 
-    <Button
-        android:id="@+id/upload"
-        android:layout_width="207dp"
-        android:layout_height="62dp"
-        android:background="@drawable/selector"
-        android:drawableRight="@drawable/gallery"
-        android:text="From Galery"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.563"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.898" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.056"
+            app:srcCompat="@drawable/img_prev" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/camera"
-        android:layout_width="208dp"
-        android:layout_height="64dp"
-        android:background="@drawable/selector"
-        android:drawableRight="@drawable/camera"
-        android:text="Take Picture"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="400dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.781" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/upload"
+            android:layout_width="207dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/selector"
+            android:drawableRight="@drawable/gallery"
+            android:text="From Galery" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="480dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/camera"
+            android:layout_width="208dp"
+            android:layout_height="64dp"
+            android:background="@drawable/selector"
+            android:drawableRight="@drawable/camera"
+            android:text="Take Picture"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="599dp"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

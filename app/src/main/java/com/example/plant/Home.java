@@ -169,6 +169,9 @@ public class Home extends AppCompatActivity {
 
                     startActivity(intent);
             return true;
+        }if (id==R.id.homeButton){
+            Intent intent=new Intent(getApplicationContext(),Home.class);
+            startActivity(intent);
         }
         return true;
     }

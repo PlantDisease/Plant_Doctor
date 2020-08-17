@@ -2,6 +2,9 @@ package com.example.plant;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +34,8 @@ public class Forecast extends Crop_Cultivation {
         final EditText acre = (EditText) ((Activity)context).findViewById(R.id.acre);
         final Button calculateButton = (Button) ((Activity)context).findViewById(R.id.calculate);
         final TextView textView = (TextView) ((Activity)context).findViewById(R.id.textView12);
+
+
         StringRequest stringRequest = new StringRequest(Request.Method.GET, PredictionUrl + "/getProduction?district="+district_name+"&crop="+crop_name,
                 new Response.Listener<String>() {
                     @Override
@@ -41,6 +46,7 @@ public class Forecast extends Crop_Cultivation {
                             predicted = jsonResponse.getString("prediction");
                             predicted=predicted.replaceAll("\\[", "").replaceAll("\\]","");
                             float res=Float.parseFloat(predicted);
+
                             res=Math.round(res);
                             production.setText(String.valueOf(res)+" Quintal per Acre");
                             textView.setVisibility(View.VISIBLE);
@@ -72,4 +78,5 @@ public class Forecast extends Crop_Cultivation {
         RequestQueue requestQueue = Volley.newRequestQueue(context);
         requestQueue.add(stringRequest);
     }
+
 }

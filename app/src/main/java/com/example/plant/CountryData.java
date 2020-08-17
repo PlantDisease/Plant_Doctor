@@ -22,5 +22,5 @@ public class CountryData {
             "82", "34", "94", "290", "508", "249", "597", "268", "46", "41",
             "963", "886", "992", "255", "66", "228", "690", "676", "216", "90",
             "993", "688", "971", "84", "967", "263"};
-    public static final String[] StateNames={"Andaman Nicobar","Andhra Pradesh","Karnataka"};
+    public static final String[] StateNames={"Select State","Andaman Nicobar","Andhra Pradesh","Karnataka"};
 }

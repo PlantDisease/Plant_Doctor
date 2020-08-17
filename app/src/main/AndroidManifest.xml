@@ -24,6 +24,7 @@
         <activity android:name=".Home" />
         <activity android:name=".disease_details" />
         <activity android:name=".UploadFile" />
+        <activity android:name=".RestorePassword"/>
         <activity android:name=".Intro"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity

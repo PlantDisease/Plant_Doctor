@@ -37,8 +37,9 @@ public class RestorePassword extends AppCompatActivity {
         pd.setCanceledOnTouchOutside(false);
 
         useremail = findViewById(R.id.resetUsingEmail);
+        resetbtn=findViewById(R.id.resetPassbtn);
 
-        findViewById(R.id.resetPassbtn).setOnClickListener(new View.OnClickListener() {
+        resetbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

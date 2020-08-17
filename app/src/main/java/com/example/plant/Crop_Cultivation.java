@@ -1,9 +1,17 @@
 package com.example.plant;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,6 +26,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.json.JSONObject;
 
@@ -66,6 +75,7 @@ public class Crop_Cultivation extends AppCompatActivity {
                             district_array = district_name.split(",");
                             crop_name = jsonresponse.getString("crops");
                             crop_array = crop_name.split(",");
+
 //                        Log.d("Name Received",jsonresponse.getString("name"));
                             ArrayAdapter<CharSequence> districtAdapter = new ArrayAdapter<CharSequence>(Crop_Cultivation.this, android.R.layout.simple_spinner_dropdown_item, district_array);
                             districtAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -90,10 +100,14 @@ public class Crop_Cultivation extends AppCompatActivity {
                                 @Override
                                 public void onItemSelected(AdapterView<?> adapterView, View view, int j, long l) {
                                     crop_name = crop.getItemAtPosition(j).toString();
-                                    Forecast forecast = new Forecast();
-                                    forecast.Forecast(district_name, crop_name, Crop_Cultivation.this);
-                                }
+                                    if (!(district_name == "Select District" || crop_name == "Select Crop")) {
+                                        Forecast forecast = new Forecast();
+                                        forecast.Forecast(district_name, crop_name, Crop_Cultivation.this);
+                                        progress_dialog();
+                                    } else {
 
+                                    }
+                                }
                                 @Override
                                 public void onNothingSelected(AdapterView<?> adapterView) {
 
@@ -124,5 +138,39 @@ public class Crop_Cultivation extends AppCompatActivity {
 
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.list,menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id=item.getItemId();
+        if(id==R.id.signout){
+            FirebaseAuth.getInstance().signOut();
+            Intent intent=new Intent(getApplicationContext(),login.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+            startActivity(intent);
+            return true;
+        }if (id==R.id.homeButton){
+            Intent intent=new Intent(getApplicationContext(),Home.class);
+            startActivity(intent);
+        }
+        return true;
+    }
+    public void progress_dialog() {
+        final Loading loading=new Loading(Crop_Cultivation.this);
+        loading.startloadingDialog();
+        loading.dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        Handler handler=new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                loading.dismissDialog();
+            }
+        },8000);
     }
     }

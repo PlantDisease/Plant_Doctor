@@ -84,6 +84,7 @@ public class Register_ extends AppCompatActivity {
                         fullName.setText(userData.getName());
                         address.setText(userData.getAddress());
                         contact.setText(userData.getContact());
+                        pd.dismiss();
                     }
 
                 }
@@ -151,10 +152,9 @@ public class Register_ extends AppCompatActivity {
                                                             .show();
                                                     Intent intent = new Intent(Register_.this, Home.class);
                                                     startActivity(intent);
-
+                                                    pd.dismiss();
                                                     finish();
                                                 }
-                                                pd.dismiss();
 
                                             }
 

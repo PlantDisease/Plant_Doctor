@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -36,7 +37,7 @@ public class Intro extends AppCompatActivity implements Button.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
-
+        setPreference();
 //        sharedPreferences = getSharedPreferences("pref",MODE_PRIVATE);
 //        sharedPreferences.getBoolean("firsttime",true);
 
@@ -137,7 +138,6 @@ public class Intro extends AppCompatActivity implements Button.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.next_button_id:
-
                 String buttonText = nextButton.getText().toString();
                 if (buttonText.equals(this.getResources().getString(R.string.next))) {
                     viewPager.setCurrentItem(currentScreenIndex + 1, true);
@@ -151,5 +151,13 @@ public class Intro extends AppCompatActivity implements Button.OnClickListener {
                 viewPager.setCurrentItem(currentScreenIndex - 1, true);
                 break;
         }
+    }
+    private void setPreference()
+    {
+        SharedPreferences preferences=getSharedPreferences("Login",0);
+        SharedPreferences.Editor editor=preferences.edit();
+        editor.putString("First","Yes");
+        Log.d("Inside setPreference","done");
+        editor.commit();
     }
 }

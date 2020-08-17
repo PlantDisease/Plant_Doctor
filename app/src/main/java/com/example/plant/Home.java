@@ -1,6 +1,7 @@
 package com.example.plant;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
@@ -165,6 +166,10 @@ public class Home extends AppCompatActivity {
         if(id==R.id.signout){
                     FirebaseAuth.getInstance().signOut();
                     Intent intent=new Intent(getApplicationContext(),login.class);
+                    SharedPreferences preferences=getSharedPreferences("Login",0);
+                    SharedPreferences.Editor editor=preferences.edit();
+                    editor.remove("First");
+                    editor.commit();
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
                     startActivity(intent);

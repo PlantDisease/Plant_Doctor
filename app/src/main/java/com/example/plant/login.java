@@ -38,7 +38,6 @@ public class login extends AppCompatActivity {
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setPreference();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
     l5=findViewById(R.id.l5);
@@ -97,20 +96,6 @@ public class login extends AppCompatActivity {
 
             startActivity(intent);
         }
-    }
-    private String checkPreference() {
-        SharedPreferences preferences=getSharedPreferences("Login",0);
-        String res=preferences.getString("First","");
-        Log.d("Inside checkPreference",res);
-        return res;
-    }
-    private void setPreference()
-    {
-        SharedPreferences preferences=getSharedPreferences("Login",0);
-        SharedPreferences.Editor editor=preferences.edit();
-        editor.putString("First","Yes");
-        Log.d("Inside setPreference","done");
-        editor.commit();
     }
 
 }

@@ -171,7 +171,6 @@ public class Home extends AppCompatActivity {
                     editor.remove("First");
                     editor.commit();
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
                     startActivity(intent);
             return true;
         }if (id==R.id.homeButton){

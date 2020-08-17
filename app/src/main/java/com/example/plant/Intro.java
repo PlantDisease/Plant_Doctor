@@ -30,9 +30,6 @@ public class Intro extends AppCompatActivity implements Button.OnClickListener {
     private Button backButton;
     private Button nextButton;
     private int currentScreenIndex;
-    SharedPreferences sharedPreferences;
-    Boolean Firsttime;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

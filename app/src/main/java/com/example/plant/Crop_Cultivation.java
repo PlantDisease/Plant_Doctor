@@ -164,7 +164,7 @@ public class Crop_Cultivation extends AppCompatActivity {
     public void progress_dialog() {
         final Loading loading=new Loading(Crop_Cultivation.this);
         loading.startloadingDialog();
-        loading.dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        Loading.dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         Handler handler=new Handler();
         handler.postDelayed(new Runnable() {
             @Override

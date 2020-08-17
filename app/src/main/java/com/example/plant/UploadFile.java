@@ -53,7 +53,7 @@ public class UploadFile extends AppCompatActivity {
     TextView titleTv,messageTv;
     ImageView closePopupHealthyplant,closePopupNotplant;
     Button btnAcpt,btnRetry;
-    private static final String ROOT_URL = "http://eead3423a309.ngrok.io";
+    private static final String ROOT_URL = "http://2dbb8ec78159.ngrok.io";
     private static final int REQUEST_PERMISSIONS = 100;
     private static final int PICK_IMAGE_REQUEST =1 ;
     private static final int CAMERA_REQUEST=100;
@@ -128,7 +128,7 @@ public class UploadFile extends AppCompatActivity {
             filePath = getPath(picUri);
             if (filePath != null) {
                 try {
-                    Log.d("filePath", String.valueOf(filePath));
+                    Log.d("filePath", filePath);
                     bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), picUri);
 
                         Log.d("bitmap", String.valueOf(bitmap));
@@ -153,14 +153,14 @@ public class UploadFile extends AppCompatActivity {
     private void progress_dialog() {
         final Loading loading=new Loading(UploadFile.this);
         loading.startloadingDialog();
-        loading.dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        Loading.dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         Handler handler=new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 loading.dismissDialog();
             }
-        },8000);
+        },10000);
     }
 
     public String getPath(Uri uri) {

@@ -22,7 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Forecast extends Crop_Cultivation {
-    private static final String PredictionUrl = "http://eead3423a309.ngrok.io";
+    private static final String PredictionUrl = "http://2dbb8ec78159.ngrok.io";
     public String predicted="";
     public int SOCKET_TIMEOUT = 30000;
     Context context;
@@ -48,7 +48,7 @@ public class Forecast extends Crop_Cultivation {
                             float res=Float.parseFloat(predicted);
 
                             res=Math.round(res);
-                            production.setText(String.valueOf(res)+" Quintal per Acre");
+                            production.setText(res +" Quintal per Acre");
                             textView.setVisibility(View.VISIBLE);
                             acre.setVisibility(View.VISIBLE);
                             calculateButton.setVisibility(View.VISIBLE);
@@ -59,7 +59,7 @@ public class Forecast extends Crop_Cultivation {
                                     float useracre= (float) Float.parseFloat(acre.getText().toString());
                                     calculated.setVisibility(View.VISIBLE);
                                     float result=useracre* finalRes;
-                                    calculated.setText(String.valueOf(result)+" Quintal");
+                                    calculated.setText(result +" Quintal");
                                 }
                             });
                         } catch (JSONException e) {
